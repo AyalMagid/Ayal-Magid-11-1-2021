@@ -9,7 +9,7 @@ export const weatherService = {
 
 const API_KEY = 'g74onLWLq4UVuuojVkuMZqnqwGiqbjin'
 const DEFAULT_LOCATION_KEY = '215854' //TEL-AVIV  
-const BASE_URL = `http://dataservice.accuweather.com/`
+const BASE_URL = `https://dataservice.accuweather.com/`
 
 function getLocationByName(cityName){
     if (!cityName) cityName = 'tel aviv'
@@ -34,6 +34,4 @@ function getFiveDaysWeather(locationKey, isCelcius){
     const url = `${BASE_URL}forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}&language=en-us&details=false&metric=${isCelcius}`
     return axios.get(url).then(res => res.data.DailyForecasts);
 }
-
-
 

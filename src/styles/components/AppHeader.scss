@@ -1,0 +1,28 @@
+.app-header{
+    background-color: $clr3;
+    padding: 1rem;
+    padding-bottom: 0.2rem;
+    color:$clr2;
+    margin-bottom: 1rem;
+    .logo{
+        h2{
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+    }
+    .fa-moon, .fa-sun{
+        margin-left: 5px;
+    }
+    .header-unit, .header-theme{
+        color: $clr4;
+        font-size: 14px;
+        &:hover{
+            color:$clr2;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+    }
+    .header-unit{
+        margin-left: 10px;
+    }
+}

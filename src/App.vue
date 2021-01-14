@@ -1,17 +1,26 @@
 <template>
-	<div id="app" class="">
-		<AppHeader />
-		<router-view />
-	</div>
+  <div id="app" :class="isDark ? 'dark-theme' : ''">
+    <AppHeader @onToggleTheme="toggleTheme" />
+    <router-view :isDark="isDark" />
+  </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue';
+import AppHeader from "@/components/AppHeader.vue";
 
 export default {
-	components: {
-		AppHeader,
-		AppFooter,
-	},
+  data() {
+    return {
+      isDark: false
+    };
+  },
+  methods: {
+    toggleTheme(isDark) {
+      this.isDark = isDark;
+    }
+  },
+  components: {
+    AppHeader
+  }
 };
 </script>

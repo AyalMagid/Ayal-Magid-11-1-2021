@@ -1,32 +1,55 @@
 <template>
-	<header class="grid-container">
-		<div class="site-header-wrapper grid-pos-center flex align-center space-between">
-			<section class="logo">
-				<h2>Logo</h2>
-			</section>
-			<nav>
-				<ul class="flex-center nav-links" :class="{ open: menuIsOpen }">
-					<router-link tag="li" to="about">Link1 </router-link>
-					<router-link tag="li" to="contact">Link </router-link>
-					<router-link tag="li" to="special">Link </router-link>
-				</ul>
-			</nav>
-			<section class="hamburger" @click="openMenu" />
-		</div>
-	</header>
+  <header class="app-header">
+    <div class="flex align-center space-between">
+    <div class="logo-theme-unit-wrapper">
+      <section class="logo">
+        <h2>WeatherApp</h2>
+      </section>
+        <div class="header-btns-container flex align-center">
+          <div v-show="isDark" class="header-theme flex align-center" @click="toggleTheme">
+            <div>Theme:</div>
+            <i class="fas fa-moon"></i>
+          </div>
+          <div v-show="!isDark" class="header-theme flex align-center" @click="toggleTheme">
+            <div>Theme:</div>
+            <i class="fas fa-sun"></i>
+          </div>
+          <div v-show="isCelcius" class="header-unit" @click="toggleUnit">Unit: °C</div>
+          <div v-show="!isCelcius" class="header-unit" @click="toggleUnit">Unit: °F</div>
+        </div>
+      </div>
+      <nav class="flex align-center">
+        <Tabs />
+      </nav>
+    </div>
+  </header>
 </template>
 
 <script>
+import Tabs from "./Tabs.vue";
 export default {
-	data() {
-		return {
-			menuIsOpen: false,
-		};
-	},
-	methods: {
-		openMenu() {
-			this.menuIsOpen = !this.menuIsOpen;
-		},
-	},
+  components: {
+    Tabs,
+  },
+  data() {
+    return {
+      isDark:false
+    };
+  },
+  computed:{
+      isCelcius (){
+        return this.$store.getters.isCelcius
+    }
+  },
+  methods: {
+    toggleUnit(){
+      const isCelcius = !this.isCelcius
+      this.$store.dispatch({ type: "updateUnit", isCelcius});
+    },
+    toggleTheme(){
+      this.isDark=!this.isDark
+      this.$emit('onToggleTheme', this.isDark)
+    }
+  }
 };
 </script>

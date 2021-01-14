@@ -1,0 +1,138 @@
+.home {
+  min-height: 80%;
+  .search-container {
+    max-width: 50%;
+    margin: 0 auto;
+    background: $clr1;
+    height: 3rem;
+    border: 2px solid $clr2;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    .search-input {
+      width: 75%;
+      border: none;
+      background: $clr3;
+      outline: none;
+      padding: 0.5rem;
+      color: $clr2;
+      border: $clr2 2px solid;
+      border-radius: 7px 0 0 7px;
+      font-size: 1rem;
+    }
+    .search-icon {
+      cursor: pointer;
+      width: 25%;
+      background:$clr3;
+      border-radius: 0 7px 7px 0px;
+      color: $clr2;
+      font-size: 1.2rem;
+      border: $clr2 2px solid;
+      .fa-search:hover{
+        transition: 0.6s;
+        transform: scale(1.2);
+      }
+    }
+    .dark-theme{
+        color: $clr1;
+        border: $clr1 2px solid;
+      }
+  }
+  .dark-theme{
+    color: $clr1;
+    border: 2px solid $clr1;
+  }
+
+  .home-main-container {
+    background: $clr3;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 1.5rem;
+    @media screen and (max-width: 550px) {
+        max-width: 90%;
+    }
+    .loader{
+        margin: 0 auto;
+    }
+    .home-top-container {
+      margin-bottom: 2rem;
+      .city-name-temp-wrapper {
+        width: 20%;
+        .city-name, .city-temp{
+            font-size: 0.8rem;
+            color: $clr4;
+        }
+      }
+      .add-remove-wrapper {
+        width: 15%;
+
+        .add-remove-btn {
+          width: 75%;
+          height: 2rem;
+          background: $clr2;
+          border-radius: 0 5px 5px 0;
+          color: $clr3;
+          text-align: center;
+          font-weight: bold;
+          padding-right:2.3rem;
+          &:hover{
+            background: lighten($clr2, 5%);
+          }
+          @media screen and (max-width: 820px) {
+              display: none;
+          }
+        }
+        .add-remove-icon {
+          cursor: pointer;
+          padding: 0.5rem;
+          background: $clr2;
+          height: 2rem;
+          width: 25%;
+          border-radius: 5px 0 0 5px;
+          color: $clr3;
+          font-weight: bold;
+          text-align: center;
+          &:hover{
+            background: lighten($clr2, 5%);
+          }
+          @media screen and (max-width: 820px) {
+            width: 100%;
+            border-radius: 5px;
+            }
+        }
+      }
+    }
+
+    .weather-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: $clr4;
+      @media screen and (max-width: 550px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .weather-days-container {
+        gap:0.8rem;
+        overflow: scroll;
+        height: 30vh;
+        .day-forecast{
+            @media screen and (max-width: 700px) {
+                min-width: 45%;
+            }
+            min-width: 30%;
+            flex-grow: 1;
+            flex-basis: 0;
+            box-shadow: 0px 0px 4px -3px black;
+            background-color: $clr3;
+            border-radius: 5px;
+            padding: 1.5rem;
+            background: #5f5ff61c;
+            .day-name{
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+  }
+}

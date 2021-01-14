@@ -1,0 +1,46 @@
+.favorties{
+        .none-fav-msg{
+            font-size: 1.2rem;
+            color: $clr4;
+            text-align: center;
+        }
+        .favorites-list-container{
+            max-height: 74vh;
+            overflow: scroll;
+            min-height: 80%;
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 5px;
+            padding: 1.5rem;
+            .favorites-list-inside-wrapper{
+            gap:0.8rem;
+            .favorite-container{
+                @media screen and (max-width: 700px) {
+                    min-width: 45%;
+                }
+                min-width: 30%;
+                gap:10px;
+                text-align: center;
+                flex-grow: 1;
+                flex-basis: 0;
+                box-shadow: 0px 0px 5px -3px black;
+                font-size: 1rem;
+                cursor: pointer;
+                background-color: $clr3;
+                border-radius: 5px;
+                padding:1.5rem;
+                background: #5f5ff61c;
+                &:hover{
+                  transform: rotate(-10deg);
+                  transition: 0.5s;
+                }
+                .city-name{
+                    color:$clr4;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+

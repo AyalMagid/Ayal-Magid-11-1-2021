@@ -25,4 +25,14 @@
     .header-unit{
         margin-left: 10px;
     }
+    .md-button {
+        text-transform: initial;
+    }
+    .md-ripple{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .md-tabs-navigation .md-icon-label .md-tab-icon+.md-tab-label {
+        text-decoration: none!important;
+    }
 }

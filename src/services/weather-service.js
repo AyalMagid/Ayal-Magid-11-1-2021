@@ -11,7 +11,7 @@ export const weatherService = {
     getFiveDaysWeather
 };
 
-const API_KEY = 'FoOJ2wQzAGYCCUhkZnxNROzAig6CyOGM'
+const API_KEY = 'wliVMfj2GDy73JFc76vowAIGbAHaelbe'
 const DEFAULT_LOCATION_KEY = '215854' //TEL-AVIV  
 const BASE_URL = `https://dataservice.accuweather.com/`
 

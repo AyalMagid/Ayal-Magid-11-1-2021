@@ -25,11 +25,11 @@
             {{isCelcius? currDayWeather.Temperature.Metric.Unit: currDayWeather.Temperature.Imperial.Unit}}
           </div>
         </div>
-        <div v-show="!isLoader" class="add-remove-wrapper flex-center" @click="addOrRemoveFavorite">
-          <div v-show="isFavorite" class="add-remove-icon">
+        <div v-show="currDayWeather" class="add-remove-wrapper flex" @click="addOrRemoveFavorite">
+          <div v-show="isFavorite" class="add-remove-icon flex-center">
             <i class="fas fa-heart"></i>
           </div>
-          <div v-show="!isFavorite" class="add-remove-icon">
+          <div v-show="!isFavorite" class="add-remove-icon flex-center">
             <i class="far fa-heart"></i>
           </div>
           <button class="add-remove-btn">{{isFavorite? 'Remove':'Add'}}</button>

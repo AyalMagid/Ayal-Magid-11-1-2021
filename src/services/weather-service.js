@@ -1,4 +1,8 @@
-import axios from "axios";
+import Axios from "axios";
+
+var axios = Axios.create({
+    withCredentials: false
+});
 
 export const weatherService = {
     getLocationByName,
@@ -7,7 +11,7 @@ export const weatherService = {
     getFiveDaysWeather
 };
 
-const API_KEY = 'g74onLWLq4UVuuojVkuMZqnqwGiqbjin'
+const API_KEY = 'FoOJ2wQzAGYCCUhkZnxNROzAig6CyOGM'
 const DEFAULT_LOCATION_KEY = '215854' //TEL-AVIV  
 const BASE_URL = `https://dataservice.accuweather.com/`
 
